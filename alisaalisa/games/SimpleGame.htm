@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simple JavaScript game</title>
+<script>
+var number = parseInt(Math.random()* 100+1);
+
+function game() {
+	var answer =parseInt(document.getElementById("answer").value);
+	var phrase = '';
+	if (number > answer ){
+		phrase = "Քիչ ա" ;
+	} else if (number < answer ){
+		phrase= "Շատ ա" ;
+	} else if(number == answer ){
+		phrase= "<h2><span style='color:red;'>Գուշակեցիր !!!</span></h2>" ;
+	} else {
+		phrase= "Սխալ մուտքային տվյալ" ;
+	}
+	document.getElementById("demo").innerHTML= phrase; 
+}
+</script>
+</head>
+<body>
+<p>Ես 1-ից 100 թիվ կմտածեմ, իսկ դու գուշակի:</p>
+<input id='answer' type ='text' />
+<button onclick="game()">Ասել</button>
+<br>
+<b><p id="demo"></p></b>
+</body>
+</html>
+
