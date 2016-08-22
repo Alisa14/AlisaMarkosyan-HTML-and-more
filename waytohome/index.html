@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+	<script>var stack = [];
+  stack.push("Moxraguyn 2 mutqani shenq");       
+  stack.push("16 harkani 6-ankyun shenq" );  
+  stack.push("erkar 7 mutqov 9 harkani");       
+  stack.push("3 harkani shenq, araji harkum bank");
+   ListObjects ( stack);
+  
+function ListObjects ( list)
+{
+var output ="<ul>"
+ for (i = 0; i < stack.length; i++) { 
+    output = output + "<li>" +stack[i]+"</li>";
+}
+output +="</ul>"
+document.getElementById("result").innerHTML = output;
+}
+
+function add( )
+{
+if ( document.getElementById("building").value != "" )
+{
+stack.push( document.getElementById("building").value);
+}
+ ListObjects ( stack);
+ document.getElementById("building").value ="";
+}
+
+function remove()
+{
+
+stack.pop( );
+ ListObjects ( stack);
+}
+
+
+
+</script>
+<style>
+ul {
+    list-style-image: url('home-icon.png');
+}
+</style>
+    <meta name="author" content="Alisa Markosyan">
+</head>
+<body>
+<div id="result"></div>
+<br><br>
+<input id='building' type ='text' />
+<button onclick="add()">Add building</button>
+
+<button onclick="remove()">Remove building</button>
+
+</body>
+</html>
