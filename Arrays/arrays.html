@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title>Arrays homework</title>
+  <script>
+  function code(){
+// Homework 1
+var text = [3, 2, 1];
+
+var newstring = text[2] + " bigger than " + text[1] + " bigger than " + text[0];
+document.getElementById("my").innerHTML = newstring;
+
+//Homework 2
+
+var words = ["Elephants ", "love ",
+  "Monkeys ", "are scared of ", " mice ", "bananas "
+];
+
+var newstring = words[0] + words[3] + words[4] + "<br>" + words[2] + words[1] + words[5];
+
+var output = document.getElementById("my2");
+output.innerHTML = newstring;
+}
+</script>
+
+</head>
+<body onload="code();">
+  <div id="my"></div>
+  <br><br>
+  <div id="my2"></div>
+</body>
+
+</html>
