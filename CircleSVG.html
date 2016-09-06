@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+div {
+display: inline-block;
+padding:10px;
+margin:10px;
+}
+
+</style>
+
+</head>
+<body>
+<div>
+<h1>SVG vector</h1>
+<svg height="500" width="300">
+  <circle cx="130" cy="130" r="110" stroke="#098043" stroke-width="35" fill="white" />
+</svg>
+</div>
+
+<div>
+<h1>Canvas</h1>
+<canvas id="myCanvas" width="500" height="500" >
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+</div>
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.save();
+ctx.beginPath();
+ctx.moveTo(0,0);
+ctx.lineTo(300,0);
+ctx.lineTo(300,500);
+ctx.lineTo(0,500);
+ctx.closePath();
+ctx.clip();
+ctx.strokeStyle = 'rgba(0,0,0,0)';
+ctx.lineCap = 'butt';
+ctx.lineJoin = 'miter';
+ctx.miterLimit = 4;
+ctx.save();
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#098043";
+ctx.lineWidth = 35;
+ctx.beginPath();
+ctx.arc(130,130,110,0,6.283185307179586,true);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+ctx.restore();
+ctx.restore();
+
+</script>
+</body>
+</html>
